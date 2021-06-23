@@ -4,7 +4,7 @@ const { OK } = require("../helpers/status_codes");
 const {
   getAllClubs,
   getClub,
-  addClub
+  addClub,
 } = require("../controllers/clubs_controller");
 
 const router = express.Router();
@@ -25,6 +25,5 @@ router.post("/", async (request, response) => {
   const newClub = await addClub(clubToAdd);
   response.status(CREATED).json(newClub);
 });
-
 
 module.exports = router;
